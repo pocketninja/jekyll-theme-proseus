@@ -1,0 +1,9 @@
+---
+# front matter
+---
+
+@import 'skin/light';
+@import 'base';
+@media (prefers-color-scheme: dark) {
+  @import 'skin/dark';
+}

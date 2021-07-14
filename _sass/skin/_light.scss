@@ -1,0 +1,9 @@
+
+* {
+  --base-gutter: 1rem;
+  --base-border-radius: 0.25rem;
+  --background-opacity: 1;
+  --foreground-opacity: 1;
+  --color-foreground: rgba(34, 39, 46, var(--foreground-opacity));
+  --color-background: rgba(199, 189, 173, var(--background-opacity));
+}
