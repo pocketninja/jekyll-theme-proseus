@@ -64,6 +64,13 @@ main {
 
   p {
     text-align: justify;
+
+    &.author {
+      text-align: right;
+      font-family: $font-family-sans;
+      font-size: small;
+      margin: 0;
+    }
   }
 
   a {

@@ -2,6 +2,10 @@
 {%- include header.html -%}
 <main>
     {{ content }}
+
+    <p class="author">
+        {{ page.date }} &mdash; {{ page.author }}
+    </p>
 </main>
 {%- include footer.html -%}
 {%- include tail.html -%}
