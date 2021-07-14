@@ -6,3 +6,4 @@ _site
 Gemfile.lock
 /.idea/modules.xml
 /.idea/vcs.xml
+/.idea/watcherTasks.xml

@@ -16,8 +16,10 @@ body {
 }
 
 .wrapper {
-  margin: 0 auto;
   max-width: $max-width;
+  margin: auto auto calc(var(--base-gutter) * 2);
+  padding-left: calc(var(--base-gutter) * 2);
+  padding-right: calc(var(--base-gutter) * 2);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,4 +60,9 @@ main {
   background: var(--color-foreground);
   padding: var(--base-gutter);
   border-radius: calc(var(--base-border-radius) * 2);
+  line-height: var(--content-line-height);
+
+  p {
+    text-align: justify;
+  }
 }
