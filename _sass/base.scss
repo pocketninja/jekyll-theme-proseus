@@ -71,6 +71,13 @@ main {
       font-size: small;
       margin: 0;
     }
+
+    &.prose-type,
+    &.prose-audio {
+      text-align: right;
+      font-size: small;
+      margin: 0;
+    }
   }
 
   a {
@@ -86,5 +93,11 @@ main {
       //text-decoration: underline;
       border-color: var(--color-foreground);
     }
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 1px solid var(--color-foreground);
+    opacity: 0.1;
   }
 }

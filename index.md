@@ -2,12 +2,16 @@
 layout: page
 title: Index
 permalink: /
+audio: Song 123 - The Band
+type: slice
 ---
 
 
 # Heading 1
 
 ## Heading 2
+
+---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum consectetur lorem at feugiat. Vivamus sed nisl nunc. Suspendisse ut mauris euismod, ornare ipsum ut, aliquam turpis. Vestibulum suscipit ante sagittis lectus consectetur luctus. Nullam pharetra sapien eget sem efficitur porttitor. Vivamus iaculis felis eu maximus placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet nisi finibus, hendrerit orci sed, convallis sem. Maecenas euismod mi dui, quis pharetra sem sollicitudin vel. Proin bibendum quis felis eu ornare. Quisque tincidunt consequat euismod. Quisque quis nisi lorem. Vestibulum finibus, lectus ut porta vehicula, purus nulla lacinia orci, ac efficitur mauris nunc vel ante. Pellentesque posuere, urna in hendrerit convallis, est risus volutpat ante, sit amet vestibulum augue orci in arcu. Etiam sed eros quis massa dignissim scelerisque.
 

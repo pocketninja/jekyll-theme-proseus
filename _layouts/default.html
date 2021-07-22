@@ -1,6 +1,17 @@
 {%- include head.html -%}
 {%- include header.html -%}
 <main>
+    {% case page.type %}
+        {% when 'slice' %}
+            <p class="prose-type">A "vertical slice" of fiction.</p>
+        {% when 'short' %}
+            <p class="prose-type">A very short story.</p>
+    {% endcase %}
+
+    {% if page.audio %}
+        <p class="prose-audio">Audio: <em>{{ page.audio }}</em></p>
+    {% endif %}
+
     {{ content }}
 
     <p class="author">
