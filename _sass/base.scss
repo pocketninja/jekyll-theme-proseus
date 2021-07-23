@@ -1,50 +1,54 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins&display=swap');
-
-$font-family-serif: 'Lora', serif !default;
-$font-size: 1rem !default;
-$font-family-sans: 'Poppins', sans-serif !default;
-$line-height: 1.5 !default;
-$max-width: 680px !default;
 
 body {
   margin: 0 auto;
-  font-family: $font-family-serif;
-  font-size: $font-size;
+
   background: var(--color-background);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-family-serif);
+  font-size: var(--base-font-size);
   color: var(--color-foreground);
+
 }
 
 .wrapper {
-  max-width: $max-width;
+  max-width: var(--max-width);
   margin: auto auto calc(var(--base-gutter) * 2);
   padding-left: calc(var(--base-gutter) * 2);
   padding-right: calc(var(--base-gutter) * 2);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-sans;
+  padding: 0;
+  margin: 0.75em 0;
+
+  font-family: var(--font-family-sans);
+  line-height: var(--heading-line-height);
 }
 
 header {
   nav {
     ul {
-      font-family: $font-family-sans;
       display: flex;
       list-style: none;
-      justify-content: flex-end;
       align-items: center;
-      text-transform: uppercase;
       gap: 0.5rem;
 
+      font-family: var(--font-family-sans);
+      justify-content: flex-end;
+      text-transform: uppercase;
+
       li a {
-        font-size: small;
         display: block;
         padding: calc(var(--base-gutter) / 4) calc(var(--base-gutter) / 2);
+
         background: var(--color-foreground);
-        color: var(--color-background);
         border-radius: var(--base-border-radius);
 
+        font-size: small;
+        color: var(--color-background);
         text-decoration: none;
 
         &:hover {
@@ -56,48 +60,62 @@ header {
 }
 
 main {
-  --foreground-opacity: 0.1;
-  background: var(--color-foreground);
-  padding: var(--base-gutter);
-  border-radius: calc(var(--base-border-radius) * 2);
+  padding: calc(var(--base-gutter) * 2);
+
+  font-size: var(--content-font-size);
   line-height: var(--content-line-height);
+
+  --foreground-opacity: 0.05;
+  background: var(--color-foreground);
+  border-radius: calc(var(--base-border-radius) * 2);
+
+  border: 1px solid var(--color-foreground);
+  box-shadow: 0 0.125rem 0.1875rem 0.06rem var(--color-foreground);
 
   p {
     text-align: justify;
 
     &.author {
-      text-align: right;
-      font-family: $font-family-sans;
-      font-size: small;
       margin: 0;
+
+      text-align: right;
+      font-family: var(--font-family-sans);
+      font-size: small;
     }
 
     &.prose-type,
     &.prose-audio {
+      margin: 0;
+
       text-align: right;
       font-size: small;
-      margin: 0;
     }
   }
 
+  hr + p::first-letter {
+    font-size: var(--content-first-letter-font-size);
+    line-height: var(--content-first-letter-line-height);
+  }
+
   a {
+    padding: 0 calc(var(--base-gutter) /4 );
+
     color: var(--color-foreground);
     font-variant: small-caps;
-    background: var(--color-background);
-    padding: 0 calc(var(--base-gutter) /4 );
     text-decoration: none;
+
     border: 1px solid transparent;
     border-radius: var(--base-border-radius);
+    background: var(--color-background);
 
     &:hover {
-      //text-decoration: underline;
       border-color: var(--color-foreground);
     }
   }
 
   hr {
+    opacity: 0.1;
     border: 0;
     border-bottom: 1px solid var(--color-foreground);
-    opacity: 0.1;
   }
 }

@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins&display=swap');
 
 * {
-  --content-line-height: 1.5;
+  --max-width: 680px;
+
+  --font-family-serif: 'Lora', serif;
+  --font-family-sans: 'Poppins', sans-serif;
+  --base-font-size: 1rem;
+  --content-font-size: 1.125rem;
+  --content-first-letter-font-size: calc(var(--content-font-size) * 2);
+
+  --heading-line-height: 1;
+  --content-line-height: 1.75;
+  --content-first-letter-line-height: 1;
+
   --base-gutter: 1rem;
   --base-border-radius: 0.25rem;
+
   --background-opacity: 1;
   --foreground-opacity: 1;
+
   --color-foreground: rgba(34, 39, 46, var(--foreground-opacity));
   --color-background: rgba(199, 189, 173, var(--background-opacity));
 }
