@@ -16,8 +16,13 @@ body {
 .wrapper {
   max-width: var(--max-width);
   margin: auto auto calc(var(--base-gutter) * 2);
-  padding-left: calc(var(--base-gutter) * 2);
-  padding-right: calc(var(--base-gutter) * 2);
+
+  padding: 0 var(--base-gutter);
+
+  @media (min-width: 519px) {
+    padding: 0 calc(var(--base-gutter) * 2);
+  }
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,7 +65,11 @@ header {
 }
 
 main {
-  padding: calc(var(--base-gutter) * 2);
+  padding: var(--base-gutter);
+
+  @media (min-width: 519px) {
+    padding: calc(var(--base-gutter) * 2);
+  }
 
   font-size: var(--content-font-size);
   line-height: var(--content-line-height);
@@ -117,5 +126,9 @@ main {
     opacity: 0.1;
     border: 0;
     border-bottom: 1px solid var(--color-foreground);
+  }
+
+  ul, ol {
+    padding: 0 0 0 1.25em;
   }
 }
