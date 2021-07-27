@@ -6,4 +6,5 @@ defaults:
     scope:
       path: "" # empty means all files
     values:
-      author: "Dan Herbert"
+      author: Dan Herbert
+      use_paging: false

@@ -2,6 +2,7 @@
 
 body {
   margin: 0 auto;
+  padding: 0;
 
   background: var(--color-background);
 
@@ -14,15 +15,16 @@ body {
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   max-width: var(--max-width);
   margin: auto auto calc(var(--base-gutter) * 2);
 
-  padding: 0 var(--base-gutter);
+  padding: var(--base-gutter);
 
-  @media (min-width: 519px) {
-    padding: 0 calc(var(--base-gutter) * 2);
-  }
-
+  //@media (min-width: 519px) {
+  //  padding: var(--base-gutter) calc(var(--base-gutter) * 2);
+  //}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,6 +39,7 @@ header {
   nav {
     ul {
       display: flex;
+      margin: 0 0 var(--base-gutter);
       list-style: none;
       align-items: center;
       gap: 0.5rem;
@@ -67,9 +70,9 @@ header {
 main {
   padding: var(--base-gutter);
 
-  @media (min-width: 519px) {
-    padding: calc(var(--base-gutter) * 2);
-  }
+  //@media (min-width: 519px) {
+  //  padding: calc(var(--base-gutter) * 2);
+  //}
 
   font-size: var(--content-font-size);
   line-height: var(--content-line-height);
@@ -107,7 +110,7 @@ main {
   }
 
   a {
-    padding: 0 calc(var(--base-gutter) /4 );
+    padding: 0 calc(var(--base-gutter) / 4);
 
     color: var(--color-foreground);
     font-variant: small-caps;
@@ -130,5 +133,52 @@ main {
 
   ul, ol {
     padding: 0 0 0 1.25em;
+  }
+}
+
+//does the site use paging mode?
+.wrapper.uses-paging {
+  max-height: calc(100vh - var(--base-gutter) * 2);
+  margin-bottom: 0;
+
+  main {
+  }
+
+  .inner {
+    overflow: hidden;
+
+    .inner-content {
+      overflow: hidden;
+      column-gap: 0;
+
+      transition: margin-left;
+      transition-duration: 0.2s;
+    }
+  }
+
+  .paging-nav {
+    display: flex;
+    padding: var(--base-gutter);
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--base-gutter) / 2);
+
+    button {
+      display: block;
+      padding: calc(var(--base-gutter) / 4) calc(var(--base-gutter) / 2);
+
+      background: var(--color-foreground);
+      border-radius: var(--base-border-radius);
+      border: 0;
+
+      font-size: small;
+      color: var(--color-background);
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

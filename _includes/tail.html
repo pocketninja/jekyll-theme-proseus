@@ -1,5 +1,12 @@
 
-</div>
+    {% if page.use_paging %}
+    <div aria-hidden="true" class="paging-nav">
+            <button class="previous">prev</button>
+            <button class="next">next</button>
+    </div>
+    {% endif %}
 
+</div>
+    <script src="{{ "/assets/main.js" | relative_url }}"></script>
 </body>
 </html>
