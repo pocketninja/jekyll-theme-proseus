@@ -4,6 +4,7 @@ title: Index
 permalink: /
 audio: Song 123 - The Band
 type: slice
+use_paging: true
 ---
 
 # Heading 1

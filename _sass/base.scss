@@ -35,6 +35,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--heading-line-height);
 }
 
+[disabled] {
+  opacity: 0.25;
+  cursor: default !important;
+}
+
 header {
   nav {
     ul {
@@ -134,6 +139,7 @@ main {
   ul, ol {
     padding: 0 0 0 1.25em;
   }
+
 }
 
 //does the site use paging mode?
@@ -163,6 +169,11 @@ main {
     align-items: center;
     gap: calc(var(--base-gutter) / 2);
 
+    &.disabled {
+      display: none;
+      visibility: hidden;
+    }
+
     button {
       display: block;
       padding: calc(var(--base-gutter) / 4) calc(var(--base-gutter) / 2);
@@ -171,14 +182,11 @@ main {
       border-radius: var(--base-border-radius);
       border: 0;
 
-      font-size: small;
+      font-size: large;
       color: var(--color-background);
       text-decoration: none;
       cursor: pointer;
 
-      &:hover {
-        text-decoration: underline;
-      }
     }
   }
 }

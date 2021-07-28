@@ -1,5 +1,5 @@
 function windowScrolls() {
-    return window.innerWidth > document.body.clientWidth;
+    return window.innerHeight < document.documentElement.scrollHeight;
 }
 
 function wrapperIsFullWidth() {
@@ -13,8 +13,6 @@ function setupPaging() {
     if (!$section || !$pager || !windowScrolls()) {
         return;
     }
-
-    wrapperIsFullWidth();
 
     const $pagedInnerSection = $section.querySelector('.inner-content');
     const pageWidth = $pagedInnerSection.getBoundingClientRect().width +
@@ -33,10 +31,14 @@ function setupPaging() {
         $pagedInnerSection.style.marginLeft = `${-targetPage * pageWidth}px`;
 
         currentPage = targetPage;
+
+        $pager.querySelector('button.previous')[currentPage === 0 ? 'setAttribute' : 'removeAttribute']('disabled', null);
+        $pager.querySelector('button.next')[currentPage === pages - 1 ? 'setAttribute' : 'removeAttribute']('disabled', null);
     };
 
     const reset = () => {
         $pager.removeEventListener('click', pagerClick);
+        $pager.classList.add('disabled');
         $pagedInnerSection.style.width = '';
         $pagedInnerSection.style.columnCount = '';
         $pagedInnerSection.style.columnWidth = '';
@@ -49,13 +51,18 @@ function setupPaging() {
         $pagedInnerSection.style.width = `${++pages * pageWidth}px`;
         $pagedInnerSection.style.columnCount = pages;
 
+        //bail if something went wrong...
         if (pages > 100) {
             reset();
-            break;
+            return;
         }
     }
 
+    $pager.classList.remove('disabled');
+
     $pager.addEventListener('click', pagerClick);
+    //click the back button to initialise disabled state, etc
+    $pager.querySelector('button.previous').click();
 }
 
 
