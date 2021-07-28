@@ -11,6 +11,11 @@ function setupPaging() {
     const $pager = document.querySelector('.paging-nav');
 
     if (!$section || !$pager || !windowScrolls()) {
+
+        if ($pager) {
+            $pager.classList.add('disabled');
+        }
+
         return;
     }
 
@@ -44,7 +49,6 @@ function setupPaging() {
         $pagedInnerSection.style.columnWidth = '';
     }
 
-
     let pages = 1;
 
     while (windowScrolls()) {
@@ -56,6 +60,11 @@ function setupPaging() {
             reset();
             return;
         }
+    }
+
+    if (pages === 1) {
+        reset();
+        return;
     }
 
     $pager.classList.remove('disabled');
